@@ -1,0 +1,36 @@
+from setuptools import setup, find_packages
+
+setup(
+    name="amazon-creatorsapi-python-sdk",
+    version="1.0.0",
+    description="Amazon Creators API Python SDK (Official)",
+    long_description=open("README.md", encoding="utf-8").read(),
+    long_description_content_type="text/markdown",
+    author="Amazon",
+    url="https://github.com/RajpurohitHitesh/amazon-creatorsapi-python-sdk",
+    packages=find_packages(exclude=["examples", "tests", "tests.*"]),
+    install_requires=[
+        "python_dateutil>=2.5.3",
+        "setuptools>=21.0.0",
+        "urllib3>=1.25.3,<2.1.0",
+        "pydantic>=2",
+        "typing-extensions>=4.7.1",
+        "requests>=2.25.0",
+    ],
+    classifiers=[
+        "Development Status :: 5 - Production/Stable",
+        "Intended Audience :: Developers",
+        "License :: OSI Approved :: Apache Software License",
+        "Operating System :: OS Independent",
+        "Programming Language :: Python :: 3",
+        "Programming Language :: Python :: 3.7",
+        "Programming Language :: Python :: 3.8",
+        "Programming Language :: Python :: 3.9",
+        "Programming Language :: Python :: 3.10",
+        "Programming Language :: Python :: 3.11",
+        "Programming Language :: Python :: 3.12",
+    ],
+    python_requires=">=3.7",
+    license="Apache License 2.0",
+    keywords="amazon creators api sdk product advertising associate",
+)
