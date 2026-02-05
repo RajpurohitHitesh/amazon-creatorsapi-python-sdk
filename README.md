@@ -3,7 +3,6 @@
 [![Amazon API](https://img.shields.io/badge/Amazon%20CreatorsAPI-%23FD9B15)](https://affiliate-program.amazon.in/creatorsapi/docs/en-us/introduction)
 [![PyPI - Downloads](https://img.shields.io/pypi/dm/amazon-creatorsapi-python-sdk?label=Installs)](https://pypi.org/project/amazon-creatorsapi-python-sdk/)
 ![Static Badge](https://img.shields.io/badge/License-Apache_2.0-blue)
-[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=RajpurohitHitesh_amazon-creatorsapi-python-sdk&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=RajpurohitHitesh_amazon-creatorsapi-python-sdk)
 [![Python application](https://github.com/RajpurohitHitesh/amazon-creatorsapi-python-sdk/actions/workflows/python-app.yml/badge.svg)](https://github.com/RajpurohitHitesh/amazon-creatorsapi-python-sdk/actions/workflows/python-app.yml)
 [![Python Package using Conda](https://github.com/RajpurohitHitesh/amazon-creatorsapi-python-sdk/actions/workflows/python-package-conda.yml/badge.svg)](https://github.com/RajpurohitHitesh/amazon-creatorsapi-python-sdk/actions/workflows/python-package-conda.yml)
 [![Python package](https://github.com/RajpurohitHitesh/amazon-creatorsapi-python-sdk/actions/workflows/python-package.yml/badge.svg)](https://github.com/RajpurohitHitesh/amazon-creatorsapi-python-sdk/actions/workflows/python-package.yml)
