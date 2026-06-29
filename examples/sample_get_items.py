@@ -33,49 +33,26 @@ from creatorsapi_python_sdk.exceptions import ApiException
 
 
 def get_items():
-    """
-    Sample function to demonstrate GetItems API usage
-    """
-    
-    """ Please add your credentials """
-    """ Please add your credential Id here """
-    credential_id = "<YOUR CREDENTIAL ID>"
-    
-    """ Please add your credential secret here """
-    credential_secret = "<YOUR CREDENTIAL SECRET>"
-
-    """ Please add your credential version here """
-    """ For eg- 2.1 for North America (NA) region """
-    """ 2.2 for Europe (EU) region """
-    """ 2.3 for Far East (FE) region """
-    version = "<YOUR CREDENTIAL VERSION>"
-    
-    # Initialize API client
+    # Initialize API client with credential details
     api_client = ApiClient(
-        credential_id=credential_id,
-        credential_secret=credential_secret,
-        version=version
+        credential_id="<YOUR CREDENTIAL ID>",
+        credential_secret="<YOUR CREDENTIAL SECRET>",
+        version="<YOUR CREDENTIAL VERSION>"
     )
     
     # Initialize API
     api = DefaultApi(api_client)
 
     """
-    Specify the marketplace to which you want to send the request
-    Eg- "www.amazon.com" for US marketplace
-    For more details, refer: https://affiliate-program.amazon.com/creatorsapi/docs/en-us/api-reference/common-request-headers-and-parameters#marketplace-locale-reference
+    Add marketplace. For more details, refer: https://affiliate-program.amazon.com/creatorsapi/docs/en-us/api-reference/common-request-headers-and-parameters#marketplace-locale-reference
     """
     marketplace = "<YOUR MARKETPLACE>"
     
-    """ Please add your partner tag (store/tracking id) here """
-    partner_tag = "<YOUR PARTNER TAG>"
-    
-    """ Specify item IDs (ASINs) """
-    item_ids = ['B0DLFMFBJW', 'B0BFC7WQ6R', 'B00ZV9RDKK']
-    
-    """ Choose resources you want from GetItemsResource enum """
-    """ For more details, refer: https://affiliate-program.amazon.com/creatorsapi/docs/en-us/api-reference/operations/get-items#resources-parameter """
-    get_items_resources = [
+    """
+    Choose resources you want from GetItemsResource enum
+    For more details, refer: https://affiliate-program.amazon.com/creatorsapi/docs/en-us/api-reference/operations/get-items#resources-parameter
+    """
+    resources = [
         'images.primary.medium',
         'itemInfo.title',
         'itemInfo.features',
@@ -87,30 +64,23 @@ def get_items():
     
     # Create GetItems request
     get_items_request = GetItemsRequestContent(
-        partner_tag=partner_tag,
-        item_ids=item_ids,
-        resources=get_items_resources
+        partner_tag="<YOUR PARTNER TAG>",
+        item_ids=['B0DLFMFBJW', 'B0BFC7WQ6R', 'B00ZV9RDKK'],
+        resources=resources
     )
     
     try:
-        """ Sending request """
+        # Call the GetItems API
         response = api.get_items(x_marketplace=marketplace, get_items_request_content=get_items_request)
         
         print('API called successfully.')
-        print("Complete Response:\n", json.dumps(response.to_dict() if hasattr(response, 'to_dict') else str(response), indent=2))
+        print('Complete Response:\n', json.dumps(response.to_dict() if hasattr(response, 'to_dict') else str(response), indent=2))
         
     except ApiException as exception:
-        print("Error calling Creators API!")
+        print('Error calling Creators API!')
         print(exception)
-
-    except TypeError as exception:
-        print("TypeError:", exception)
-
-    except ValueError as exception:
-        print("ValueError:", exception)
-
     except Exception as exception:
-        print("Unexpected error:", str(exception))
+        print('Unexpected error:', exception)
 
 
 get_items()

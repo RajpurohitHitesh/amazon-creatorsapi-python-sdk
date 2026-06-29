@@ -33,55 +33,26 @@ from creatorsapi_python_sdk.exceptions import ApiException
 
 
 def search_items():
-    """
-    Sample function to demonstrate SearchItems API usage
-    """
-    
-    """ Please add your credentials """
-    """ Please add your credential Id here """
-    credential_id = "<YOUR CREDENTIAL ID>"
-    
-    """ Please add your credential secret here """
-    credential_secret = "<YOUR CREDENTIAL SECRET>"
-
-    """ Please add your credential version here """
-    """ For eg- 2.1 for North America (NA) region """
-    """ 2.2 for Europe (EU) region """
-    """ 2.3 for Far East (FE) region """
-    version = "<YOUR CREDENTIAL VERSION>"
-    
-    # Initialize API client
+    # Initialize API client with credential details
     api_client = ApiClient(
-        credential_id=credential_id,
-        credential_secret=credential_secret,
-        version=version
+        credential_id="<YOUR CREDENTIAL ID>",
+        credential_secret="<YOUR CREDENTIAL SECRET>",
+        version="<YOUR CREDENTIAL VERSION>"
     )
     
     # Initialize API
     api = DefaultApi(api_client)
 
     """
-    Specify the marketplace to which you want to send the request
-    Eg- "www.amazon.com" for US marketplace
-    For more details, refer: https://affiliate-program.amazon.com/creatorsapi/docs/en-us/api-reference/common-request-headers-and-parameters#marketplace-locale-reference
+    Add marketplace. For more details, refer: https://affiliate-program.amazon.com/creatorsapi/docs/en-us/api-reference/common-request-headers-and-parameters#marketplace-locale-reference
     """
     marketplace = "<YOUR MARKETPLACE>"
     
-    """ Please add your partner tag (store/tracking id) here """
-    partner_tag = "<YOUR PARTNER TAG>"
-    
-    """ Specify keywords """
-    keywords = "Harry Potter"
-    
-    """ Specify search index """
-    search_index = "Books"
-    
-    """ Specify item count """
-    item_count = 2
-    
-    """ Choose resources you want from SearchItemsResource enum """
-    """ For more details, refer: https://affiliate-program.amazon.com/creatorsapi/docs/en-us/api-reference/operations/search-items#resources-parameter """
-    search_items_resources = [
+    """
+    Choose resources you want from SearchItemsResource enum
+    For more details, refer: https://affiliate-program.amazon.com/creatorsapi/docs/en-us/api-reference/operations/search-items#resources-parameter
+    """
+    resources = [
         'images.primary.medium',
         'itemInfo.title',
         'offersV2.listings.availability',
@@ -96,32 +67,25 @@ def search_items():
     
     # Create SearchItems request
     search_items_request = SearchItemsRequestContent(
-        partner_tag=partner_tag,
-        keywords=keywords,
-        search_index=search_index,
-        item_count=item_count,
-        resources=search_items_resources
+        partner_tag="<YOUR PARTNER TAG>",
+        keywords="Harry Potter",
+        search_index="Books",
+        item_count=2,
+        resources=resources
     )
     
     try:
-        """ Sending request """
+        # Call the SearchItems API
         response = api.search_items(x_marketplace=marketplace, search_items_request_content=search_items_request)
         
         print('API called successfully.')
-        print("Complete Response:\n", json.dumps(response.to_dict() if hasattr(response, 'to_dict') else str(response), indent=2))
+        print('Complete Response:\n', json.dumps(response.to_dict() if hasattr(response, 'to_dict') else str(response), indent=2))
         
     except ApiException as exception:
-        print("Error calling Creators API!")
+        print('Error calling Creators API!')
         print(exception)
-
-    except TypeError as exception:
-        print("TypeError:", exception)
-
-    except ValueError as exception:
-        print("ValueError:", exception)
-
     except Exception as exception:
-        print("Unexpected error:", exception)
+        print('Unexpected error:', exception)
 
 
 search_items()

@@ -16,7 +16,8 @@
 """
 
 """
-Sample script demonstrating how to use the CreatorsAPI Python SDK
+Sample script demonstrating how to use the CreatorsAPI Python SDK for GetFeed API
+GetFeed operation retrieves a specific product feed file that your store has access to.
 """
 
 import json
@@ -31,71 +32,36 @@ from creatorsapi_python_sdk.exceptions import ApiException
 
 
 def get_feed():
-    """
-    Sample function to demonstrate GetFeed API usage
-    """
-    
-    """ Please add your credentials """
-    """ Please add your credential Id here """
-    credential_id = "<YOUR CREDENTIAL ID>"
-    
-    """ Please add your credential secret here """
-    credential_secret = "<YOUR CREDENTIAL SECRET>"
-
-    """ Please add your credential version here """
-    """ For eg- 2.1 for North America (NA) region """
-    """ 2.2 for Europe (EU) region """
-    """ 2.3 for Far East (FE) region """
-    version = "<YOUR CREDENTIAL VERSION>"
-    
-    # Initialize API client
+    # Initialize API client with credential details
     api_client = ApiClient(
-        credential_id=credential_id,
-        credential_secret=credential_secret,
-        version=version
+        credential_id="<YOUR CREDENTIAL ID>",
+        credential_secret="<YOUR CREDENTIAL SECRET>",
+        version="<YOUR CREDENTIAL VERSION>"
     )
     
     # Initialize API
     api = DefaultApi(api_client)
 
-    """ Forming request """
-    """ Specify Feed name that your store has access to, Feed name can be found from list feeds api response """
-    """ Eg- "us_standardized_apparel_retail.xml.gz" """
-    feed_name = "us_standardized_apparel_retail.xml.gz"
-
     """
-    Specify the marketplace to which you want to send the request
-    Eg- "www.amazon.com" for US marketplace
-    For more details, refer: https://affiliate-program.amazon.com/creatorsapi/docs/en-us/api-reference/common-request-headers-and-parameters#marketplace-locale-reference
+    Add marketplace. For more details, refer: https://affiliate-program.amazon.com/creatorsapi/docs/en-us/api-reference/common-request-headers-and-parameters#marketplace-locale-reference
     """
     marketplace = "<YOUR MARKETPLACE>"
 
-    """ Forming request """
-    try:
-        get_feed_request = GetFeedRequestContent(feed_name=feed_name)
-    except ValueError as exception:
-        print("Error in forming Request: ", exception)
-        return
+    # Create GetFeed request
+    get_feed_request = GetFeedRequestContent(feed_name="<YOUR FILENAME>")
         
     try:
-        """ Sending request """
+        # Call the GetFeed API
         response = api.get_feed(x_marketplace=marketplace, get_feed_request_content=get_feed_request)
         
         print('API called successfully.')
-        print("Complete Response:\n", json.dumps(response.to_dict() if hasattr(response, 'to_dict') else str(response), indent=2))
+        print('Complete Response:\n', json.dumps(response.to_dict() if hasattr(response, 'to_dict') else str(response), indent=2))
         
     except ApiException as exception:
-        print("Error calling Creators API!")
+        print('Error calling Creators API!')
         print(exception)
-
-    except TypeError as exception:
-        print("TypeError:", exception)
-
-    except ValueError as exception:
-        print("ValueError:", exception)
-
     except Exception as exception:
-        print("Unexpected error:", exception)
+        print('Unexpected error:', exception)
 
 
 get_feed()

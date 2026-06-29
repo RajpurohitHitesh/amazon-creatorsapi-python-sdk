@@ -1,15 +1,3 @@
-[![PyPI](https://img.shields.io/pypi/v/amazon-creatorsapi-python-sdk?color=%231182C2&label=PyPI)](https://pypi.org/project/amazon-creatorsapi-python-sdk/)
-[![Python](https://img.shields.io/badge/Python->3.9-%23FFD140)](https://www.python.org/)
-[![Amazon API](https://img.shields.io/badge/Amazon%20CreatorsAPI-%23FD9B15)](https://affiliate-program.amazon.in/creatorsapi/docs/en-us/introduction)
-[![PyPI - Downloads](https://img.shields.io/pypi/dm/amazon-creatorsapi-python-sdk?label=Installs)](https://pypi.org/project/amazon-creatorsapi-python-sdk/)
-![Static Badge](https://img.shields.io/badge/License-Apache_2.0-blue)
-[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=RajpurohitHitesh_amazon-creatorsapi-python-sdk&metric=bugs)](https://sonarcloud.io/summary/new_code?id=RajpurohitHitesh_amazon-creatorsapi-python-sdk)
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=RajpurohitHitesh_amazon-creatorsapi-python-sdk&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=RajpurohitHitesh_amazon-creatorsapi-python-sdk)
-[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=RajpurohitHitesh_amazon-creatorsapi-python-sdk&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=RajpurohitHitesh_amazon-creatorsapi-python-sdk)
-[![Python application](https://github.com/RajpurohitHitesh/amazon-creatorsapi-python-sdk/actions/workflows/python-app.yml/badge.svg)](https://github.com/RajpurohitHitesh/amazon-creatorsapi-python-sdk/actions/workflows/python-app.yml)
-[![Python Package using Conda](https://github.com/RajpurohitHitesh/amazon-creatorsapi-python-sdk/actions/workflows/python-package-conda.yml/badge.svg)](https://github.com/RajpurohitHitesh/amazon-creatorsapi-python-sdk/actions/workflows/python-package-conda.yml)
-[![Python package](https://github.com/RajpurohitHitesh/amazon-creatorsapi-python-sdk/actions/workflows/python-package.yml/badge.svg)](https://github.com/RajpurohitHitesh/amazon-creatorsapi-python-sdk/actions/workflows/python-package.yml)
-
 # Creators API Python SDK Example
 
 ## Prerequisites
@@ -46,7 +34,7 @@ Before running the samples, you'll need to configure your API credentials in the
 
 - `<YOUR CREDENTIAL ID>` - Your API credential ID
 - `<YOUR CREDENTIAL SECRET>` - Your API credential secret  
-- `<YOUR CREDENTIAL VERSION>` - Your credential version (e.g., "2.1" for NA, "2.2" for EU, "2.3" for FE region)
+- `<YOUR CREDENTIAL VERSION>` - Your credential version (e.g., "2.1" for NA, "2.2" for EU, "2.3" for FE with Cognito; "3.1" for NA, "3.2" for EU, "3.3" for FE with LWA)
 - `<YOUR MARKETPLACE>` - Your marketplace to which you want to send the request (e.g., "www.amazon.com" for US marketplace)
 - `<YOUR PARTNER TAG>` - Your Partner Tag for the requested marketplace in applicable sample code snippet files
 

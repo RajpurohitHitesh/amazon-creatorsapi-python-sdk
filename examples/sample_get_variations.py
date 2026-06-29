@@ -33,53 +33,26 @@ from creatorsapi_python_sdk.exceptions import ApiException
 
 
 def get_variations():
-    """
-    Sample function to demonstrate GetVariations API usage
-    """
-    
-    """ Please add your credentials """
-    """ Please add your credential Id here """
-    credential_id = "<YOUR CREDENTIAL ID>"
-    
-    """ Please add your credential secret here """
-    credential_secret = "<YOUR CREDENTIAL SECRET>"
-
-    """ Please add your credential version here """
-    """ For eg- 2.1 for North America (NA) region """
-    """ 2.2 for Europe (EU) region """
-    """ 2.3 for Far East (FE) region """
-    version = "<YOUR CREDENTIAL VERSION>"
-    
-    # Initialize API client
+    # Initialize API client with credential details
     api_client = ApiClient(
-        credential_id=credential_id,
-        credential_secret=credential_secret,
-        version=version
+        credential_id="<YOUR CREDENTIAL ID>",
+        credential_secret="<YOUR CREDENTIAL SECRET>",
+        version="<YOUR CREDENTIAL VERSION>"
     )
     
     # Initialize API
     api = DefaultApi(api_client)
 
     """
-    Specify the marketplace to which you want to send the request
-    Eg- "www.amazon.com" for US marketplace
-    For more details, refer: https://affiliate-program.amazon.com/creatorsapi/docs/en-us/api-reference/common-request-headers-and-parameters#marketplace-locale-reference
+    Add marketplace. For more details, refer: https://affiliate-program.amazon.com/creatorsapi/docs/en-us/api-reference/common-request-headers-and-parameters#marketplace-locale-reference
     """
     marketplace = "<YOUR MARKETPLACE>"
     
-    """ Please add your partner tag (store/tracking id) here """
-    partner_tag = "<YOUR PARTNER TAG>"
-    
-    """ Specify ASIN """
-    asin = "B0DLFMFBJW"
-    
-    """ Specify language of preference """
-    """ For more details, refer https://affiliate-program.amazon.com/creatorsapi/docs/en-us/api-reference/locale-reference"""
-    languages_of_preference = ["en_US"]
-    
-    """ Choose resources you want from GetVariationsResource enum """
-    """ For more details, refer: https://affiliate-program.amazon.com/creatorsapi/docs/en-us/api-reference/operations/get-variations#resources-parameter """
-    get_variations_resources = [
+    """
+    Choose resources you want from GetVariationsResource enum
+    For more details, refer: https://affiliate-program.amazon.com/creatorsapi/docs/en-us/api-reference/operations/get-variations#resources-parameter
+    """
+    resources = [
         'images.primary.medium',
         'itemInfo.title',
         'offersV2.listings.availability',
@@ -95,31 +68,23 @@ def get_variations():
 
     # Create GetVariations request
     get_variations_request = GetVariationsRequestContent(
-        partner_tag=partner_tag,
-        asin=asin,
-        languages_of_preference=languages_of_preference,
-        resources=get_variations_resources
+        partner_tag="<YOUR PARTNER TAG>",
+        asin="B0DLFMFBJW",
+        resources=resources
     )
     
     try:
-        """ Sending request """
+        # Call the GetVariations API
         response = api.get_variations(x_marketplace=marketplace, get_variations_request_content=get_variations_request)
         
         print('API called successfully.')
-        print("Complete Response:\n", json.dumps(response.to_dict() if hasattr(response, 'to_dict') else str(response), indent=2))
+        print('Complete Response:\n', json.dumps(response.to_dict() if hasattr(response, 'to_dict') else str(response), indent=2))
         
     except ApiException as exception:
-        print("Error calling Creators API!")
+        print('Error calling Creators API!')
         print(exception)
-
-    except TypeError as exception:
-        print("TypeError:", exception)
-
-    except ValueError as exception:
-        print("ValueError:", exception)
-
     except Exception as exception:
-        print("Unexpected error:", exception)
+        print('Unexpected error:', exception)
 
 
 get_variations()
