@@ -19,7 +19,7 @@ permissions and limitations under the License.
 """  # noqa: E501
 
 
-__version__ = "1.0.0"
+__version__ = "1.2.0"
 
 # import apis into sdk package
 from creatorsapi_python_sdk.api.default_api import DefaultApi

@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="amazon-creatorsapi-python-sdk",
-    version="1.0.0",
+    version="1.2.0",
     description="Amazon Creators API Python SDK (Official)",
     long_description=open("README.md", encoding="utf-8").read(),
     long_description_content_type="text/markdown",
@@ -29,6 +29,7 @@ setup(
         "Programming Language :: Python :: 3.10",
         "Programming Language :: Python :: 3.11",
         "Programming Language :: Python :: 3.12",
+        "Programming Language :: Python :: 3.13",
     ],
     python_requires=">=3.7",
     license="Apache License 2.0",
