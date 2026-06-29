@@ -1,3 +1,15 @@
+<<<<<<< HEAD
+=======
+[![PyPI](https://img.shields.io/pypi/v/amazon-creatorsapi-python-sdk?color=%231182C2&label=PyPI)](https://pypi.org/project/amazon-creatorsapi-python-sdk/)
+[![Python](https://img.shields.io/badge/Python->3.9-%23FFD140)](https://www.python.org/)
+[![Amazon API](https://img.shields.io/badge/Amazon%20CreatorsAPI-%23FD9B15)](https://affiliate-program.amazon.in/creatorsapi/docs/en-us/introduction)
+[![PyPI - Downloads](https://img.shields.io/pypi/dm/amazon-creatorsapi-python-sdk?label=Installs)](https://pypi.org/project/amazon-creatorsapi-python-sdk/)
+![Static Badge](https://img.shields.io/badge/License-Apache_2.0-blue)
+[![Python application](https://github.com/RajpurohitHitesh/amazon-creatorsapi-python-sdk/actions/workflows/python-app.yml/badge.svg)](https://github.com/RajpurohitHitesh/amazon-creatorsapi-python-sdk/actions/workflows/python-app.yml)
+[![Python Package using Conda](https://github.com/RajpurohitHitesh/amazon-creatorsapi-python-sdk/actions/workflows/python-package-conda.yml/badge.svg)](https://github.com/RajpurohitHitesh/amazon-creatorsapi-python-sdk/actions/workflows/python-package-conda.yml)
+[![Python package](https://github.com/RajpurohitHitesh/amazon-creatorsapi-python-sdk/actions/workflows/python-package.yml/badge.svg)](https://github.com/RajpurohitHitesh/amazon-creatorsapi-python-sdk/actions/workflows/python-package.yml)
+
+>>>>>>> 400cf98260feb398de844a07a9b8805e52cfa25b
 # Creators API Python SDK Example
 
 ## Prerequisites
